@@ -1,5 +1,20 @@
+import { Header, Menu, Timeline } from "../components";
+import { CSSReset } from "../components/CSSReset/CSSReset";
+import config from "../config.json" ;
+
 function HomePage() {
-    return <div>Welcome to Next.js!</div>
-  }
-  
-  export default HomePage
+  return (
+    <>
+      <CSSReset />
+      <div>
+        <Menu />
+        <Header />
+        <Timeline 
+          playlist={config.playlists}
+        />
+      </div>
+    </>
+  );
+}
+
+export default HomePage;
