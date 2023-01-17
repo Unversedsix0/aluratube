@@ -52,16 +52,16 @@ export const Timeline = (props) => {
 
   return (
     <StyledTimeline>
-      {playlistNames.map((playlistNames) => {
+      {playlistNames.map((playlistNames, id) => {
         const videos = props.playlist[playlistNames];
-        console.log(videos);
+
         return (
-          <section>
+          <section key={id}>
             <h2>{playlistNames}</h2>
             <div>
-              {videos.map((video) => {
+              {videos.map((video, id) => {
                 return (
-                  <a href={video.url}>
+                  <a key={id} href={video.url}>
                     <img src={video.thumb} />
                     <span>{video.title}</span>
                   </a>
