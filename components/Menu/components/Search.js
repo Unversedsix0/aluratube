@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import styled from "styled-components"
+import styled from "styled-components";
 
 const StyledSearch = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ const StyledSearch = styled.div`
   width: 100%;
   border-radius: 2px;
   overflow: hidden;
-  
+
   input {
     width: 80%;
     padding: 4px 6px;
@@ -35,21 +35,26 @@ const StyledSearch = styled.div`
   }
 `;
 
-// Home 
+// Home
 // Menu
 // Search
 // Informação sempre desce
 
-export function Search() {
-    const [valorDaBusca, setValorDaBusca] = useState("Teste");
-    console.log("Search:", valorDaBusca)
+export function Search(props) {
 
-    return (
-        <StyledSearch>
-            <input type="text" onChange={(e) => setValorDaBusca(e.target.value)} value={valorDaBusca} />
-            <button>
-                🔎
-            </button>
-        </StyledSearch>
-    )
+  const { valorFiltro, setFiltro } = props;
+
+  //const [valorDaBusca, setValorDaBusca] = useState("Teste");
+  console.log("Search:", valorFiltro);
+
+  return (
+    <StyledSearch>
+      <input
+        type="text"
+        onChange={(e) => setFiltro(e.target.value)}
+        value={valorFiltro}
+      />
+      <button>🔎</button>
+    </StyledSearch>
+  );
 }
