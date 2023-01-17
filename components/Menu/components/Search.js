@@ -47,6 +47,8 @@ export function Search(props) {
   //const [valorDaBusca, setValorDaBusca] = useState("Teste");
   console.log("Search:", valorFiltro);
 
+  
+
   return (
     <StyledSearch>
       <input

@@ -7,6 +7,7 @@ import { Header, Menu, Timeline } from "../components";
 
 function HomePage() {
   const [valorDoFiltro, setValorDoFiltro] = useState("");
+  console.log("HomePage:",valorDoFiltro)
 
   return (
     <>
@@ -14,7 +15,7 @@ function HomePage() {
       <div>
         <Menu valorFiltro={valorDoFiltro} setFiltro={setValorDoFiltro} />
         <Header />
-        <Timeline playlist={config.playlists} />
+        <Timeline valorFiltro={valorDoFiltro} playlist={config.playlists} />
       </div>
     </>
   );
