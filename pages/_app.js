@@ -3,6 +3,7 @@ import { theme } from "../theme/palette";
 import { ThemeProvider } from "styled-components";
 import { CSSReset } from "../components/CSSReset/CSSReset";
 import { ColorModeProvider,ColorModeContext } from "../components/Menu/components/ColorMode";
+import RegisterVideo from "../components/RegisterVideo";
 
 
 function ProviderWrapper(props){
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={theme[contexto.mode]}>
         <CSSReset />
         <Component {...pageProps} />
+        <RegisterVideo />
       </ThemeProvider>
   );
 }
