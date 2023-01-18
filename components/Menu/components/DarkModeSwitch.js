@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
+import { ColorModeContext } from "./ColorMode";
 //import { ColorModeContext } from "./ColorMode";
 
 const StyledSwitch = styled.div`
@@ -37,13 +38,12 @@ const StyledSwitch = styled.div`
 `;
 
 export default function DarkModeSwitch() {
-    //const contexto = useContext(ColorModeContext);
+    const contexto = useContext(ColorModeContext);
 
     return (
         <StyledSwitch>
             <input id="darkmode" type="checkbox" onChange={() => {
-                console.log("mudou o state");
-                //contexto.toggleMode();
+                contexto.toggleMode();
             }} />
             <label
                 htmlFor="darkmode"
