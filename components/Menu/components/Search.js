@@ -45,7 +45,7 @@ export function Search(props) {
   const { valorFiltro, setFiltro } = props;
 
   //const [valorDaBusca, setValorDaBusca] = useState("Teste");
-  console.log("Search:", valorFiltro);
+  
 
   
 

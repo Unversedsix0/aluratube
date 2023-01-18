@@ -6,6 +6,7 @@ const StyledTimeline = styled.div`
   width: 100%;
   padding: 16px;
   overflow: hidden;
+ 
   h2 {
     font-size: 16px;
     margin-bottom: 16px;
@@ -49,7 +50,7 @@ const StyledTimeline = styled.div`
 
 export const Timeline = ({valorFiltro,...props}) => {
   const playlistNames = Object.keys(props.playlist);
-  console.log("Timeline:",valorFiltro);
+  
 
   return (
     <StyledTimeline>
@@ -67,7 +68,8 @@ export const Timeline = ({valorFiltro,...props}) => {
         
                 return titleNormalized.includes(searchValueNormalized)
 
-              }).map((video, id) => {
+              })
+              .map((video, id) => {
                 return (
                   <a key={id} href={video.url}>
                     <img src={video.thumb} />
