@@ -130,5 +130,17 @@
                 "thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg"
             }
         ]
-    }
+    },
+    "favorites": [
+        {
+            "canal": "Jorge",
+            "url": "https://www.youtube.com/watch?v=0JWMVc1CqpA",
+            "thumb": "https://img.youtube.com/vi/ldRbnpy-qQs/hqdefault.jpg"
+        },
+        {
+            "canal": "Play",
+            "url": "https://www.youtube.com/watch?v=0JWMVc1CqpA",
+            "thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg"
+        }
+    ]
 }
