@@ -24,6 +24,7 @@ const StyledHeader = styled.div`
 `;
 
 export const Header = () => {
+  
   return (
     <StyledHeader>
       <div>

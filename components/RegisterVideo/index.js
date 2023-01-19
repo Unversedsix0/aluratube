@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
 import { StyledRegisterVideo } from "./style";
 
 function useForm({ defaultValues }) {
+
   const [values, setValues] = useState(defaultValues);
 
   return {
@@ -16,7 +18,8 @@ function useForm({ defaultValues }) {
 }
 
 const RegisterVideo = () => {
-  const [formVisivel, setFormVisivel] = useState(true);
+
+  const [formVisivel, setFormVisivel] = useState(false);
   const { values, handleChange, reset } = useForm({
     defaultValues: { titulo: "Ex...", url: "https://youtube.com/" },
   });

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledTimeline = styled.div`
@@ -49,9 +48,9 @@ const StyledTimeline = styled.div`
 `;
 
 export const Timeline = ({valorFiltro,...props}) => {
+
   const playlistNames = Object.keys(props.playlist);
   
-
   return (
     <StyledTimeline>
       {playlistNames.map((playlistNames, id) => {
