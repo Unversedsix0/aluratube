@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import DarkModeSwitch from "./components/DarkModeSwitch";
+
 import { Search } from "./components/Search";
+import DarkModeSwitch from "./components/DarkModeSwitch";
 
 const StyledMenu = styled.header`
   display: flex;
@@ -42,6 +43,7 @@ export function Menu(props) {
 }
 
 function Logo() {
+
   return (
     <svg
       className="logo"

@@ -38,6 +38,7 @@ const StyledSwitch = styled.div`
 `;
 
 export default function DarkModeSwitch() {
+  
     const contexto = useContext(ColorModeContext);
 
     return (

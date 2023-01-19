@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import styled from "styled-components";
 
 const StyledSearch = styled.div`
@@ -43,11 +41,6 @@ const StyledSearch = styled.div`
 export function Search(props) {
 
   const { valorFiltro, setFiltro } = props;
-
-  //const [valorDaBusca, setValorDaBusca] = useState("Teste");
-  
-
-  
 
   return (
     <StyledSearch>

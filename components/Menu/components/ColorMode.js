@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 
 export const ColorModeContext = createContext({
   mode: "",
@@ -11,6 +11,7 @@ export const ColorModeContext = createContext({
 });
 
 export const ColorModeProvider = (props) => {
+
   const [mode, setMode] = useState(props.initialMode);
 
   function toggleMode() {
