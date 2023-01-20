@@ -6,6 +6,16 @@ export const CSSReset = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    &::-webkit-scrollbar {
+      border: 1px solid #20202009;
+      background-color: #20202035;
+      
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #0000005a;
+      border-radius: 4px;
+      height: 5px;
+    }
   }
   body {
     font-family: sans-serif;
