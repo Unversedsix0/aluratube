@@ -5,20 +5,30 @@ const StyledFav = styled.div`
   height: 9rem;
   display: flex;
   margin-top: 1rem;
-  margin-bottom: 1rem;
-  overflow-x: hidden;
+  margin-bottom: 3rem;
   
-  .img {
-    width: 9rem;
-    height: 9rem;
-    border-radius: 50%;
-    overflow: hidden;
+  a {
     margin-left: 2rem;
-    cursor: pointer;
+    border-radius: 50%;
+    
+    .img {
+      width: 9rem;
+      height: 9rem;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
 
-    img {
-      height: 100%;
-      scale: 1.3;
+      img {
+        height: 100%;
+      }
+    }
+    span {
+      color: ${({ theme }) => theme.textColorBase || "#222"};
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+      margin-top: 0.8rem;
     }
   }
 `
@@ -35,11 +45,12 @@ export const Favorites = (props) => {
           fav.map((value, id) => {
             
             return (
-              <div key={id}>
+              <a key={id} href={value.url}>
                 <div className="img">
-                  <img src={value.thumb} title={value.canal} />
+                  <img src={value.thumb} />
                 </div>
-              </div>
+                <span>{value.canal}</span>
+              </a>
             )
           })
         }

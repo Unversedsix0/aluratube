@@ -133,14 +133,14 @@
     },
     "favorites": [
         {
-            "canal": "Jorge",
-            "url": "https://www.youtube.com/watch?v=0JWMVc1CqpA",
-            "thumb": "https://img.youtube.com/vi/ldRbnpy-qQs/hqdefault.jpg"
+            "canal": "Rafaella Ballerini",
+            "url": "https://www.youtube.com/@rafaellaballerini/featured",
+            "thumb": "https://yt3.googleusercontent.com/84ALFuw4UCyfL1TyoMU77D-I6xngPjn2X0kbx2bMAyoFzWwR-utcrbDn_MuNJcroPcmU9NdGGQ=s176-c-k-c0x00ffffff-no-rj"
         },
         {
-            "canal": "Play",
-            "url": "https://www.youtube.com/watch?v=0JWMVc1CqpA",
-            "thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg"
+            "canal": "Filipe Deschamps",
+            "url": "https://www.youtube.com/@FilipeDeschamps",
+            "thumb": "https://yt3.googleusercontent.com/ytc/AMLnZu9fwc9E-G17B2vMnbYzZBp_NYs4AmCE802y8x08=s176-c-k-c0x00ffffff-no-rj"
         }
     ]
 }
