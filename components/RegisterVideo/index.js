@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { VideoService } from "../../services/videos";
 import { StyledRegisterVideo } from "./style";
 
 
@@ -23,8 +24,11 @@ const RegisterVideo = () => {
 
   const [formVisivel, setFormVisivel] = useState(false);
   const { values, handleChange, reset } = useForm({
-    defaultValues: { titulo: "Teste ", url: "https://www.youtube.com/watch?v=0oJQUs5oRiM" },
+    defaultValues: { titulo: "Teste ", url: "https://www.youtube.com/watch?v=0oJQUs5oRiM", thumb:"Thumb" },
   });
+
+
+  
   
  
 
@@ -56,23 +60,18 @@ const RegisterVideo = () => {
               value={values.url}
               onChange={handleChange}
             />
+            <input
+              placeholder="Thumbnail do video"
+              name="thumb"
+              value={values.thumb}
+              onChange={handleChange}
+            />
             <button type="submit" onClick={(e) => {
               e.preventDefault();
               reset();
               setFormVisivel(false);
-              supabase.from('Video').insert({
-                title:values.titulo,
-                url:values.url,
-                thumb:'https://img.youtube.com/vi/QsqatJxAUtk/hqdefault.jpg'
-              })
-
-              .then((response)=>{
-                 console .log(response);
-              })
-              .catch((error)=>{
-                console.log("Eita",error);
-              })
-
+              VideoService.post(values)
+             
             }}>
               Cadastrar
             </button>
