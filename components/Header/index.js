@@ -20,6 +20,7 @@ const StyledHeader = styled.div`
     width: 100%;
     padding: 16px 32px;
     gap: 16px;
+    background-color: ${({ theme }) => theme.backgroundLevel1 || "#FFFFFF"};
   }
 `;
 

@@ -47,20 +47,39 @@ const StyledTimeline = styled.div`
   }
 `;
 
-const mockPlaylist = ["Jogos", "Aulas"];
-
 export const Timeline = ({ valorFiltro, ...props }) => {
-  const { playlist } = props;
+  const { playlist, videos } = props;
 
-  console.log(playlist);
   return (
     <StyledTimeline>
-      {playlist &&
+      {playlist.map((playlist, id) => {
+        return (
+          <section key={id}>
+            <h2>{playlist.title}</h2>
+            {videos.filter(video => video.id_playlist === playlist.id)
+            .map((video) => {
+              return (
+                <div>
+                  <a key={id} href={video.url}>
+                    <img src={video.thumb} />
+                    <span>{video.title}</span>
+                  </a>
+                </div>
+            
+              );
+             
+            })}
+             </section>
+        
+        );
+      })}
+
+      {/*playlist &&
 
       (
         <div>{
         playlist
-          .filter((video) => {
+        .filter((video) => {
             const titleNormalized = video.title.toLowerCase();
             const searchValueNormalized = valorFiltro.toLowerCase();
 
@@ -69,7 +88,7 @@ export const Timeline = ({ valorFiltro, ...props }) => {
           .map((video, id) => {
             return (
               <section key={id}>
-                <h2>{mockPlaylist[id]}</h2>
+                <h2>{playlist}</h2>
                 <div>
                   <a key={id} href={video.url}>
                     <img src={video.thumb} />
@@ -82,7 +101,7 @@ export const Timeline = ({ valorFiltro, ...props }) => {
           }
           </div>
           )
-      }
+        */}
     </StyledTimeline>
   );
 };
