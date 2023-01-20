@@ -1,0 +1,6 @@
+export const PROJECT_URL = 'https://dgefkrvpfklxcppfalaq.supabase.co';
+export const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRnZWZrcnZwZmtseGNwcGZhbGFxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzQxNjgxODMsImV4cCI6MTk4OTc0NDE4M30.oJtqRL4t7TSdg-LEYDKz1Xwb4LUFWurF8AB15-70vDo';
+
+
+
+
