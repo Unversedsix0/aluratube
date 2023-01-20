@@ -5,7 +5,7 @@ const StyledTimeline = styled.div`
   width: 100%;
   padding: 16px;
   overflow: hidden;
- 
+
   h2 {
     font-size: 16px;
     margin-bottom: 16px;
@@ -47,40 +47,42 @@ const StyledTimeline = styled.div`
   }
 `;
 
-export const Timeline = ({valorFiltro,...props}) => {
+const mockPlaylist = ["Jogos", "Aulas"];
 
-  const playlistNames = Object.keys(props.playlist);
-  
+export const Timeline = ({ valorFiltro, ...props }) => {
+  const { playlist } = props;
+
+  console.log(playlist);
   return (
     <StyledTimeline>
-      {playlistNames.map((playlistNames, id) => {
-        const videos = props.playlist[playlistNames];
+      {playlist &&
 
-        return (
-          <section key={id}>
-            <h2>{playlistNames}</h2>
-            <div>
-              {videos
-               .filter((video) => {
-                const titleNormalized = video.title.toLowerCase();
-                const searchValueNormalized = valorFiltro.toLowerCase();
-        
-                return titleNormalized.includes(searchValueNormalized)
+      (
+        <div>{
+        playlist
+          .filter((video) => {
+            const titleNormalized = video.title.toLowerCase();
+            const searchValueNormalized = valorFiltro.toLowerCase();
 
-              })
-              .map((video, id) => {
-                return (
+            return titleNormalized.includes(searchValueNormalized);
+          })
+          .map((video, id) => {
+            return (
+              <section key={id}>
+                <h2>{mockPlaylist[id]}</h2>
+                <div>
                   <a key={id} href={video.url}>
                     <img src={video.thumb} />
                     <span>{video.title}</span>
                   </a>
-                )
-              })}
-              
-            </div>
-          </section>
-        )
-      })}
+                </div>
+              </section>
+            );
+          })
+          }
+          </div>
+          )
+      }
     </StyledTimeline>
   );
 };
