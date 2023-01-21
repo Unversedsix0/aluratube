@@ -4,25 +4,31 @@ import { Header, Menu, Timeline } from "../components";
 import { Favorites } from "../components/Favorites";
 import { VideoService } from "../services/videos";
 import { PlaylistService } from "../services/playlist";
+import RegisterVideo from "../components/RegisterVideo";
 
 
 function HomePage () {
+
   const [valorDoFiltro, setValorDoFiltro] = useState("");
   const [videos, setVideos] = useState([]);
   const [playlist, setPlaylist] = useState([]);
+  const [formVisivel, setFormVisivel] = useState(false);
   
-  const fetchVideo = async () =>{
-    const response = await VideoService.getAll();
-    setVideos(response);
-  }
-  const fetchPlaylist = async () =>{
+  useEffect(() => {
+    const fetchVideo = async () => {
+      const response = await VideoService.getAll();
+      setVideos(response);
+    }
+    !formVisivel && fetchVideo()
+  }, [formVisivel])
+
+  const fetchPlaylist = async () => {
     const response = await PlaylistService.getAll();
     setPlaylist(response)
-  
   }
 
   useEffect(() => {
-   fetchVideo();
+   
    fetchPlaylist();
   }, [])
 
@@ -34,6 +40,7 @@ function HomePage () {
         <Timeline valorFiltro={valorDoFiltro} playlist={playlist} videos={videos} />
         <Favorites fav={config.favorites} />
       </div>
+      <RegisterVideo formVisivel={formVisivel} setFormVisivel={setFormVisivel} />
     </>
   );
 }
