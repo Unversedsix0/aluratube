@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { PlaylistService } from "../../services/playlist";
 import { VideoService } from "../../services/videos";
 import { StyledRegisterVideo } from "./style";
 
@@ -18,19 +19,23 @@ function useForm({ defaultValues }) {
   };
 }
 
+const RegisterVideo = (props) => {
 
+  const { formVisivel, setFormVisivel } = props
+  
+  const [playlists, setPlaylists] = useState([]);
 
-const RegisterVideo = () => {
-
-  const [formVisivel, setFormVisivel] = useState(false);
   const { values, handleChange, reset } = useForm({
-    defaultValues: { titulo: "Teste ", url: "https://www.youtube.com/watch?v=0oJQUs5oRiM", thumb:"Thumb" },
+    defaultValues: { titulo: "T", url: "https://www.youtube.com/", thumb:"Thumb", playlist: 0},
   });
 
-
-  
-  
- 
+  useEffect(() => {
+    async function fetch(){
+      const response = await PlaylistService.getAll()
+      setPlaylists(response)
+    }
+    formVisivel && fetch()
+  }, [formVisivel])
 
   return (
     <StyledRegisterVideo>
@@ -66,6 +71,15 @@ const RegisterVideo = () => {
               value={values.thumb}
               onChange={handleChange}
             />
+            <select name="playlist" onClick={handleChange}>
+              {
+                playlists.map((value, id) => {
+                  return (
+                    <option key={id} value={value.id}>{value.title}</option>
+                  )
+                })
+              }
+            </select>
             <button type="submit" onClick={(e) => {
               e.preventDefault();
               reset();

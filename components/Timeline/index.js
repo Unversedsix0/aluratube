@@ -61,7 +61,7 @@ export const Timeline = ({ valorFiltro, ...props }) => {
               return (
                 <div>
                   <a key={id} href={video.url}>
-                    <img src={video.thumb} />
+                    <img src={video.thumb} alt='VIDEO' />
                     <span>{video.title}</span>
                   </a>
                 </div>
@@ -105,3 +105,4 @@ export const Timeline = ({ valorFiltro, ...props }) => {
     </StyledTimeline>
   );
 };
+
