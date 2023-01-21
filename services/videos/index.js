@@ -1,28 +1,28 @@
 import { api } from "../api";
 
+const ROTA = 'video'
+
 const getAll = async () =>{
   
-  const {data} =  await api.from("video")
+  const { data } =  await api.from(ROTA)
     .select("*")
 
     return data
 }
-const post = (data) =>{
 
-  api.from('video').insert({
-    title:data.titulo,
-    url:data.url,
-    thumb:data.thumb
+const post = async (video) =>{
+
+  const { data } = await api.from(ROTA).insert({
+    title: video.titulo,
+    url: video.url,
+    thumb: video.thumb,
+    id_playlist:video.playlist
   })
-  .then((response) => {
-    console.log(response)
-  })
-  .catch((error)=>{
-      console.log("Error Post: ",error)
-  })
+ 
+  return data
 }
 
 export const VideoService = {
-        getAll,
-        post
+  getAll,
+  post
 }
