@@ -48,61 +48,41 @@ const StyledTimeline = styled.div`
 `;
 
 export const Timeline = ({ valorFiltro, ...props }) => {
+
   const { playlist, videos } = props;
 
   return (
     <StyledTimeline>
-      {playlist.map((playlist, id) => {
-        return (
-          <section key={id}>
-            <h2>{playlist.title}</h2>
-            {videos.filter(video => video.id_playlist === playlist.id)
-            .map((video) => {
-              return (
-                <div>
-                  <a key={id} href={video.url}>
-                    <img src={video.thumb} alt='VIDEO' />
-                    <span>{video.title}</span>
-                  </a>
-                </div>
-            
-              );
-             
-            })}
-             </section>
-        
-        );
-      })}
+      {
+        playlist.map((playlist, id) => {
 
-      {/*playlist &&
-
-      (
-        <div>{
-        playlist
-        .filter((video) => {
-            const titleNormalized = video.title.toLowerCase();
-            const searchValueNormalized = valorFiltro.toLowerCase();
-
-            return titleNormalized.includes(searchValueNormalized);
-          })
-          .map((video, id) => {
-            return (
-              <section key={id}>
-                <h2>{playlist}</h2>
-                <div>
-                  <a key={id} href={video.url}>
-                    <img src={video.thumb} />
-                    <span>{video.title}</span>
-                  </a>
+          return (
+            <section key={id}>
+              <h2>{playlist.title}</h2>
+              <div>
+              {videos.filter(video => {
+                const titleNormalized = video.title.toLowerCase();
+                const searchValueNormalized = valorFiltro.toLowerCase();
+                
+                return (video.id_playlist === playlist.id & titleNormalized.includes(searchValueNormalized));
+              })
+                  .map((video, id) => {
+                    return (
+                        <a key={id} href={video.url}>
+                          <img src={video.thumb} alt='VIDEO' />
+                          <span>{video.title}</span>
+                        </a>
+                    );
+                  }
+                  )
+                }
                 </div>
               </section>
-            );
-          })
-          }
-          </div>
-          )
-        */}
+          
+          );
+        })
+      }
+      
     </StyledTimeline>
   );
 };
-
