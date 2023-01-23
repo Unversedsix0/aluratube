@@ -20,4 +20,4 @@ Criando projeto seguindo a imersão Alura
 Playlists
 
 ![form-dark](https://user-images.githubusercontent.com/83356439/214052673-5df1a0be-a00a-46a2-a677-6fc4d5777dbc.png)
-Fornulario para inserir novos vídeos
+Formulário para inserir novos vídeos
